@@ -6,7 +6,14 @@ function Home() {
 
     return(
         <div>
-            <h1>FoodWise</h1>
+            <header>
+                <h1>Bienvenido a FoodWise</h1>
+                <p>La mejor calculadora de macros</p>
+            </header>
+
+            <section>
+                <button>Subir Imágen</button>
+            </section>
         </div>
         
     )
