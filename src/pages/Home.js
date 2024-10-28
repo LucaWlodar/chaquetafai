@@ -14,7 +14,7 @@ function Home() {
       <h1>Welcome to Recipe Finder</h1>
       <input
         type="text"
-        placeholder="Enter an ingredient (e.g., chicken)"
+        placeholder="Enter an ingredient (e.g.kjwdfvk , chicken)"
         value={ingredient}
         onChange={(e) => setIngredient(e.target.value)}
       />
