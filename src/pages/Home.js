@@ -10,15 +10,19 @@ function Home() {
   };
 
   return (
-    <div>
-      <h1>Welcome to Recipe Finder</h1>
+    <div> 
+      <center>
+        <h1>Recinder</h1>
+        <h3>El Mejor Buscador De Recetas</h3>
+      </center>
+      
       <input
         type="text"
-        placeholder="Enter an ingredient (e.g.kjwdfvk , chicken)"
+        placeholder="Enter an ingredient (e.g., chicken)"
         value={ingredient}
         onChange={(e) => setIngredient(e.target.value)}
       />
-      <button onClick={handleSearch}>Search Recipes</button>
+      <button onClick={handleSearch}>Recindear</button>
     </div>
   );
 }
