@@ -1,0 +1,16 @@
+.fondo {
+    background-image: url('../imgs/image\ copy\ 2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 50px); /* Ajusta 50px al tamaño de tu navbar */
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    top: 0;
+}
