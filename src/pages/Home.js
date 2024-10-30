@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Home.css' 
 
 function Home() {
   const [ingredient, setIngredient] = useState('');
@@ -10,7 +11,7 @@ function Home() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '5rem' }}> 
+    <div className='fondo' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '5rem' }}> 
       <center>
         <h1>Recinder</h1>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
