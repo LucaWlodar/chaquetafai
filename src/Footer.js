@@ -8,8 +8,8 @@ function Footer() {
         <div className="footer-links">
           <h4>Explora</h4>
           <ul>
-            <li><a href="#acerca">Acerca de Nosotros</a></li>
-            <li><a href="#terminos">Términos y Condiciones</a></li>
+            <p><a href="#acerca">Acerca de Nosotros</a></p>
+            <p><a href="#terminos">Términos y Condiciones</a></p>
           </ul>
         </div>
         <div className="footer-socials">
