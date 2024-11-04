@@ -5,10 +5,10 @@ function Navbar() {
   return (
     <nav style={{ display: 'flex', justifyContent: 'flex-end', padding: '1rem', background: '#333', color: '#fff' }}>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Link to="/" style={{ color: '#fff', margin: '0 1rem' }}>Home</Link>
-        <Link to="recetas" style={{ color: '#fff', margin: '0 1rem' }}>Recetas Favoritas</Link>
+        <Link to="/" style={{ color: '#fff', margin: '0 1rem' }}>Home🏠</Link>
+        <Link to="recetas" style={{ color: '#fff', margin: '0 1rem' }}>Recetas Favoritas⭐</Link>
         <Link to="/chaquecetas" style={{ color: '#fff', margin: '0 1rem', display: 'flex', alignItems: 'center' }}>
-          Chaquecetas
+        🍲Chaquecetas🍲
           <img 
             src="https://media.telemetro.com/p/203712f30da3c37e95b9c9cc623fc1ba/adjuntos/311/imagenes/002/761/0002761191/1200x675/smart/el-museo-la-comida-asquerosa-llega-los-angeles-fotoig.png" 
             alt="Icono Izquierda" 
