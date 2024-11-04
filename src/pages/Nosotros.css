@@ -1,25 +1,43 @@
 /* src/pages/Nosotros.css */
 
 .nosotros-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .nosotros-title {
-    font-size: 2.5rem;
-    color: #b93c3c;
-    margin-bottom: 20px;
-  }
-  
-  .nosotros-description {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .nosotros-description p {
-    margin-bottom: 15px;
-  }
-  
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center;
+}
+
+.nosotros-title {
+  font-size: 2.8rem;
+  color: #e63946; /* Color rojo vibrante */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  margin-bottom: 25px;
+}
+
+.nosotros-description {
+  font-size: 1.15rem;
+  color: #333; /* Gris oscuro para una mejor legibilidad */
+  line-height: 1.75;
+  font-family: 'Roboto', sans-serif; /* Fuente legible para párrafos */
+  padding: 0 15px;
+}
+
+.nosotros-description p {
+  margin-bottom: 18px;
+  text-align: justify; /* Justifica el texto para una apariencia profesional */
+}
+
+.nosotros-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más marcada */
+  transition: transform 0.3s ease; /* Efecto de hover */
+}
+
+.nosotros-image:hover {
+  transform: scale(3); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}

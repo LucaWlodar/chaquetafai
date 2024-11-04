@@ -49,7 +49,7 @@ function RecipeDetails() {
         onClick={handleFavoritoClick} 
         className={`favorite-button ${esFavorito(recipe.idMeal) ? 'remove' : 'add'}`}
       >
-        {esFavorito(recipe.idMeal) ? 'Eliminar de Favoritos' : 'Añadir a Favoritos'}
+        {esFavorito(recipe.idMeal) ? 'Delete From Favourites' : 'Add To Favourites'}
       </button>
     </div>
   );

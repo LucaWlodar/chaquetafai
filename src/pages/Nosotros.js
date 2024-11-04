@@ -1,6 +1,9 @@
 // src/pages/Nosotros.js
 import React from 'react';
 import './Nosotros.css';
+import panas from '../imgs/panas.jpeg'
+  
+
 
 function Nosotros() {
   return (
@@ -17,6 +20,7 @@ function Nosotros() {
         <p>
           ¡Esperamos que disfrutes de nuestra página y encuentres inspiración para tu próxima comida!
         </p>
+        <img src={panas} alt="Equipo de trabajo" className="nosotros-image" />
       </div>
     </div>
   );

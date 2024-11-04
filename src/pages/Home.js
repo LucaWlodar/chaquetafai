@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import papus from '../imgs/image.png';
 import './Home.css';
 
 function Home() {
@@ -39,7 +38,7 @@ function Home() {
         <div className="header">
           <span className="emoji">🍴</span>
           <h3>El Mejor Buscador De Recetas</h3>
-          <span className="emoji">🔪</span>
+          <span className="emoji">🍴</span>
         </div>
       </center>
 
@@ -57,7 +56,7 @@ function Home() {
 
       {error && (
         <p className="error-message">
-          Receta no encontrada, prueba con otro ingrediente.
+          Bro, find something that exists
         </p>
       )}
     </div>
