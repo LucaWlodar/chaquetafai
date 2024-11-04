@@ -18,7 +18,7 @@ function Home() {
   };
 
   return (
-    <div className='fondo' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '5rem' }}> 
+    <div className='fondo' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}> 
       <center>
         <h1>Recinder</h1>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
