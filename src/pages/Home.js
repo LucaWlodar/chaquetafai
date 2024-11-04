@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Home.css' 
+import './Home.css';
 
 function Home() {
   const [ingredient, setIngredient] = useState('');
   const navigate = useNavigate();
 
   const handleSearch = () => {
+    // Si el ingrediente está vacío, redirige a recetas aleatorias
     navigate(`/recipes?ingredient=${ingredient}`);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   return (
@@ -35,10 +42,15 @@ function Home() {
           placeholder="Recindeá Un Ingrediente"
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
+          onKeyDown={handleKeyDown}
           style={{ flex: 1, padding: '0.5rem', marginRight: '0.5rem' }}
         />
         <button onClick={handleSearch} style={{ padding: '0.5rem 1rem', marginTop: '-20px' }}>Recindear</button>
       </div>
+
+      <p style={{ fontStyle: 'italic', color: '#fff', marginTop: '1rem', textAlign: 'center', maxWidth: '80%' }}>
+        🔍 Si no ingresas ningún ingrediente y presionas el botón <strong>"Recindear"</strong> o la tecla "Enter", te mostraremos recetas aleatorias para inspirarte.
+      </p>
     </div>
   );
 }

@@ -14,13 +14,13 @@ function RecipeList() {
 
   return (
     <div>
-      <h2>Recipes with "{ingredient}"</h2>
+      <h2>Recetas con "{ingredient}"</h2>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {recipes.map((recipe) => (
           <div key={recipe.idMeal} style={{ margin: '1rem' }}>
             <img src={recipe.strMealThumb} alt={recipe.strMeal} width="200" />
             <h3>{recipe.strMeal}</h3>
-            <Link to={`/recipe/${recipe.idMeal}`}>View Recipe</Link>
+            <Link to={`/recipe/${recipe.idMeal}`}>Ver receta</Link>
           </div>
         ))}
       </div>
