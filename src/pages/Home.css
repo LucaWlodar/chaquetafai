@@ -1,16 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
 .fondo {
-    background-image: url('../imgs/image\ copy\ 2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: calc(100vh - 50px); /* Ajusta 50px al tamaño de tu navbar */
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../imgs/fondobueno.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #ffffff;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.header h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.emoji {
+  font-size: 2.5rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  margin-top: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.search-input {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  color: #333;
+}
+
+/* Botón de búsqueda */
+.search-button {
+  padding: 0.6rem 1.2rem;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+  background-color: #e05a4f;
+  transform: scale(1.05);
+}
+
+
+.error-message {
+  color: #b20000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 1rem;
 }

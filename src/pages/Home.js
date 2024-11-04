@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import papus from '../imgs/image.png';
 import './Home.css';
 
 function Home() {
   const [ingredient, setIngredient] = useState('');
-  const [error, setError] = useState(false); // Estado para manejar el error
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    // Verifica si la URL tiene el parámetro error=true para mostrar el mensaje
-    const queryParams = new URLSearchParams(location.search);
-    setError(queryParams.get('error') === 'true');
-  }, [location]);
 
   const handleSearch = () => {
     if (ingredient.trim() === '') {
@@ -20,7 +14,6 @@ function Home() {
       return;
     }
 
-    // Redirige a RecipeList y restablece el error si la búsqueda es válida
     setError(false);
     navigate(`/recipes?ingredient=${ingredient}`);
   };
@@ -31,40 +24,40 @@ function Home() {
     }
   };
 
+  // Detecta el parámetro 'error' de la URL y muestra el mensaje de error solo si está presente
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    if (queryParams.get('error') === 'true') {
+      setError(true);
+    }
+  }, [window.location.search]);
+
   return (
-    <div className='fondo' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}> 
+    <div className="fondo">
       <center>
-        <h1>Recinder</h1>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-          <img 
-            src="https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y24_R16_W24_ES_ESSGPB21283-2_Main_high-97359b19.jpg" 
-            alt="Icono Izquierda" 
-            style={{ width: '100px', height: '100px' }}
-          />
+        <h1 className="title">Recinder</h1>
+        <div className="header">
+          <span className="emoji">🍴</span>
           <h3>El Mejor Buscador De Recetas</h3>
-          <img 
-            src="https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y24_R16_W24_ES_ESSGPB21283-2_Main_high-97359b19.jpg" 
-            alt="Icono Derecha" 
-            style={{ width: '100px', height: '100px' }}
-          />
+          <span className="emoji">🔪</span>
         </div>
       </center>
 
-      <div style={{ display: 'flex', alignItems: 'center', width: '50%', maxWidth: '500px', marginTop: '1rem' }}>
+      <div className="search-container">
         <input
           type="text"
-          placeholder="Recindeá Un Ingrediente"
+          placeholder="Recindeá un ingrediente..."
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
           onKeyDown={handleKeyDown}
-          style={{ flex: 1, padding: '0.5rem', marginRight: '0.5rem' }}
+          className="search-input"
         />
-        <button onClick={handleSearch} style={{ padding: '0.5rem 1rem' }}>Recindear</button>
+        <button onClick={handleSearch} className="search-button">Recindear</button>
       </div>
 
       {error && (
-        <p style={{ color: 'red', fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginTop: '1rem' }}>
-          Receta no encontrada, pruebe con otro ingrediente.
+        <p className="error-message">
+          Receta no encontrada, prueba con otro ingrediente.
         </p>
       )}
     </div>
