@@ -47,10 +47,6 @@ function Home() {
         />
         <button onClick={handleSearch} style={{ padding: '0.5rem 1rem', marginTop: '-20px' }}>Recindear</button>
       </div>
-
-      <p style={{ fontStyle: 'italic', color: '#fff', marginTop: '1rem', textAlign: 'center', maxWidth: '80%' }}>
-        🔍 Si no ingresas ningún ingrediente y presionas el botón <strong>"Recindear"</strong> o la tecla "Enter", te mostraremos recetas aleatorias para inspirarte.
-      </p>
     </div>
   );
 }
