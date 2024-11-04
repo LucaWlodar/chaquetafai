@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFavoritos } from '../context/FavoritosContext';
+import './RecipeDetails.css';
 
 function RecipeDetails() {
   const { id } = useParams();
@@ -24,21 +25,30 @@ function RecipeDetails() {
   };
 
   return (
-    <div>
-      <h1>{recipe.strMeal}</h1>
-      <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-      <h3>Ingredients:</h3>
-      <ul>
-        {[...Array(20).keys()].map((i) => {
-          const ingredient = recipe[`strIngredient${i + 1}`];
-          const measure = recipe[`strMeasure${i + 1}`];
-          return ingredient ? <li key={i}>{measure} {ingredient}</li> : null;
-        })}
-      </ul>
-      <h3>Instructions:</h3>
-      <p>{recipe.strInstructions}</p>
+    <div className="recipe-details-container">
+      <h1 className="recipe-title">{recipe.strMeal}</h1>
+      <img className="recipe-image" src={recipe.strMealThumb} alt={recipe.strMeal} />
+      
+      <div className="recipe-section">
+        <h3>Ingredients:</h3>
+        <ul className="ingredients-list">
+          {[...Array(20).keys()].map((i) => {
+            const ingredient = recipe[`strIngredient${i + 1}`];
+            const measure = recipe[`strMeasure${i + 1}`];
+            return ingredient ? <li key={i}>{measure} {ingredient}</li> : null;
+          })}
+        </ul>
+      </div>
 
-      <button onClick={handleFavoritoClick} style={{ marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: esFavorito(recipe.idMeal) ? 'red' : 'green', color: '#fff' }}>
+      <div className="recipe-section">
+        <h3>Instructions:</h3>
+        <p className="instructions">{recipe.strInstructions}</p>
+      </div>
+
+      <button 
+        onClick={handleFavoritoClick} 
+        className={`favorite-button ${esFavorito(recipe.idMeal) ? 'remove' : 'add'}`}
+      >
         {esFavorito(recipe.idMeal) ? 'Eliminar de Favoritos' : 'Añadir a Favoritos'}
       </button>
     </div>

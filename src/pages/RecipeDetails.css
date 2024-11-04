@@ -1,0 +1,65 @@
+/* RecipeDetails.css */
+
+.recipe-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recipe-title {
+    text-align: center;
+    color: #b93c3c;
+    margin-bottom: 20px;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .recipe-section {
+    margin-top: 20px;
+  }
+  
+  .ingredients-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .ingredients-list li {
+    margin-bottom: 5px;
+  }
+  
+  .instructions {
+    line-height: 1.6;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .favorite-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .favorite-button.add {
+    background-color: #4caf50; /* Verde para agregar */
+  }
+  
+  .favorite-button.remove {
+    background-color: #f44336; /* Rojo para eliminar */
+  }
+  
+  .favorite-button:hover {
+    opacity: 0.9;
+  }
+  
