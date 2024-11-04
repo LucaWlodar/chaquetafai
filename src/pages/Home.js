@@ -1,13 +1,27 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
   const [ingredient, setIngredient] = useState('');
+  const [error, setError] = useState(false); // Estado para manejar el error
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Verifica si la URL tiene el parámetro error=true para mostrar el mensaje
+    const queryParams = new URLSearchParams(location.search);
+    setError(queryParams.get('error') === 'true');
+  }, [location]);
 
   const handleSearch = () => {
-    // Si el ingrediente está vacío, redirige a recetas aleatorias
+    if (ingredient.trim() === '') {
+      setError(true);
+      return;
+    }
+
+    // Redirige a RecipeList y restablece el error si la búsqueda es válida
+    setError(false);
     navigate(`/recipes?ingredient=${ingredient}`);
   };
 
@@ -18,7 +32,7 @@ function Home() {
   };
 
   return (
-    <div className='fondo' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}> 
+    <div className='fondo' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}> 
       <center>
         <h1>Recinder</h1>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
@@ -47,6 +61,12 @@ function Home() {
         />
         <button onClick={handleSearch} style={{ padding: '0.5rem 1rem', marginTop: '-20px' }}>Recindear</button>
       </div>
+
+      {error && (
+        <p style={{ color: 'red', fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginTop: '1rem' }}>
+          Receta no encontrada, pruebe con otro ingrediente.
+        </p>
+      )}
     </div>
   );
 }
