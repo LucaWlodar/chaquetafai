@@ -59,7 +59,7 @@ function Home() {
           onKeyDown={handleKeyDown}
           style={{ flex: 1, padding: '0.5rem', marginRight: '0.5rem' }}
         />
-        <button onClick={handleSearch} style={{ padding: '0.5rem 1rem', marginTop: '-20px' }}>Recindear</button>
+        <button onClick={handleSearch} style={{ padding: '0.5rem 1rem' }}>Recindear</button>
       </div>
 
       {error && (
