@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import RecetasFavoritas from "./pages/RecetasFavoritas";
 import { FavoritosProvider } from "./context/FavoritosContext";
 import Chaquecetas from './pages/Chaquecetas';
+import Nosotros from './pages/Nosotros';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Route path="/recipe/:id" element={<RecipeDetails />} />
         <Route path="/recetas" element={<RecetasFavoritas />} />
         <Route path="/chaquecetas" element={<Chaquecetas />} />
+        <Route path="/nosotros" element={<Nosotros />} />
       </Routes>
 
       <Footer />
